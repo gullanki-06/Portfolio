@@ -1,8 +1,8 @@
 # Gullanki Bhagya Lakshmi · Portfolio
 
-**Live site → [gullanki-06.github.io/Portfolio](https://gullanki-06.github.io/Portfolio/)**
+**Live site → [gullankisiri.vercel.app](https://gullankisiri.vercel.app)**
 
-[![Portfolio preview](assets/preview.jpg)](https://gullanki-06.github.io/Portfolio/)
+[![Portfolio preview](assets/preview.jpg)](https://gullankisiri.vercel.app)
 
 AI & Data Science undergraduate at Amrita Vishwa Vidyapeetham, Coimbatore (CGPA 8.18), doing research and development in machine learning for disaster response.
 
@@ -29,7 +29,7 @@ An interactive 3D portfolio. Scrolling flies a camera through a 3D world with a 
 
 ## Built with
 
-Plain HTML, CSS and JavaScript, with [Three.js](https://threejs.org/) for the 3D scene. There is no build step, and GitHub Pages hosts it directly from `main`.
+Plain HTML, CSS and JavaScript, with [Three.js](https://threejs.org/) for the 3D scene. There is no build step. It is hosted on Vercel, which redeploys on every push to `main`.
 
 ## Run locally
 
