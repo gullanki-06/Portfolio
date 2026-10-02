@@ -21,11 +21,23 @@
   <div class="cursor-ring" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"></div>
   <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hotspots" aria-label="Rover parts">
+    <button class="hotspot" data-part="vision"><i></i><span>Vision</span></button>
+    <button class="hotspot" data-part="drive"><i></i><span>Navigation</span></button>
+    <button class="hotspot" data-part="comms"><i></i><span>Comms</span></button>
+  </div>
+  <div class="part-pop" role="dialog" aria-live="polite" hidden>
+    <button class="pop-close" aria-label="Close">×</button>
+    <p class="kicker pop-kicker"></p>
+    <h3 class="pop-title"></h3>
+    <p class="pop-text"></p>
+    <a class="more pop-link" href="#projects">See the project <span>→</span></a>
+  </div>
   <div class="hud" aria-hidden="true">
     <span class="hud-dot"></span>
-    <span class="hud-label">Formation</span>
-    <span class="hud-text">Swarm sphere</span>
-    <span class="hud-hint">· click anywhere for a shockwave</span>
+    <span class="hud-label">Station</span>
+    <span class="hud-text">SwarmSight rover</span>
+    <span class="hud-hint">· scroll to fly</span>
   </div>
 
   <header class="nav">
@@ -69,6 +81,9 @@
         </div>
 
         <div class="hero-visual fade-up" style="--d:.4s">
+          <div class="rover-stage" aria-label="3D model of the SwarmSight rescue rover">
+            <p class="stage-hint"><span class="pulse"></span>Drag to spin the rover · tap a glowing point</p>
+          </div>
           <div class="portrait" id="portrait">
             <div class="portrait-inner">
               <div class="layer frame"></div>
@@ -163,7 +178,7 @@
           </div>
         </div>
         <div class="project-grid">
-          <article class="card project tilt reveal featured" data-tags="rescue">
+          <article id="p-swarmsight" class="card project tilt reveal featured" data-tags="rescue">
             <span class="big-num">01</span>
             <p class="kicker">Robotics · Computer Vision <span class="status">In progress</span></p>
             <h3>SwarmSight: Vision-Based Search &amp; Rescue Robot</h3>
@@ -171,7 +186,7 @@
             <ul class="chips small"><li>YOLO11n</li><li>Raspberry Pi 5</li><li>NCNN</li><li>Python</li></ul>
             <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
           </article>
-          <article class="card project tilt reveal" data-tags="rescue">
+          <article id="p-pso" class="card project tilt reveal" data-tags="rescue">
             <span class="big-num">02</span>
             <p class="kicker">Swarm Intelligence <span class="status">In progress</span></p>
             <h3>Adaptive PSO for Multi-Robot Search &amp; Rescue</h3>
@@ -179,7 +194,7 @@
             <ul class="chips small"><li>PSO</li><li>Multi-Agent Systems</li><li>Python</li></ul>
             <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
           </article>
-          <article class="card project tilt reveal" data-tags="rescue">
+          <article id="p-sdr" class="card project tilt reveal" data-tags="rescue">
             <span class="big-num">03</span>
             <p class="kicker">Networks · Continual Learning <span class="status">In progress</span></p>
             <h3>Mission-Aware Continual Learning for SDR Emergency Networks</h3>
