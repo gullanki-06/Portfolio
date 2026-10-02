@@ -294,3 +294,31 @@ body.ready .fade-up { opacity: 1; transform: none; }
   .scroll-hint { display: none; }
   .email { padding: 16px 22px; }
 }
+
+/* ---------- Full-page WebGL world ---------- */
+#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+main, .footer { position: relative; z-index: 1; }
+body.webgl .hero::after { display: none; }
+body.webgl .section.alt,
+body.webgl .marquee { background: color-mix(in srgb, var(--bg-alt) 45%, transparent); }
+body.webgl .card { background: color-mix(in srgb, var(--surface-solid) 62%, transparent); }
+body.webgl .lead, body.webgl .about-copy p { text-shadow: 0 0 18px var(--bg), 0 0 6px var(--bg); }
+
+.hud {
+  position: fixed; left: 20px; bottom: 20px; z-index: 40;
+  display: none; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: .72rem; color: var(--muted);
+  padding: 8px 14px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+body.webgl .hud { display: inline-flex; }
+.hud-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+.hud-label { text-transform: uppercase; letter-spacing: .1em; font-size: .62rem; }
+.hud-text { color: var(--text); }
+@media (max-width: 780px) { .hud-hint { display: none; } .hud { left: 12px; bottom: 12px; } }
+
+/* 3D fly-in for revealed blocks */
+.reveal { transform: perspective(1200px) translate3d(0, 60px, -120px) rotateX(18deg); transform-origin: 50% 100%; }
+.reveal.visible { transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { transform: none; opacity: 1; } }

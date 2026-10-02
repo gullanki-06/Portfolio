@@ -20,6 +20,13 @@
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hud" aria-hidden="true">
+    <span class="hud-dot"></span>
+    <span class="hud-label">Formation</span>
+    <span class="hud-text">Swarm sphere</span>
+    <span class="hud-hint">· click anywhere for a shockwave</span>
+  </div>
 
   <header class="nav">
     <div class="container nav-inner">
@@ -248,6 +255,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="scene.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

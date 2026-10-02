@@ -189,6 +189,7 @@ $$(".filters button").forEach((b) => b.addEventListener("click", () => {
 (function swarm() {
   const canvas = $("#swarm");
   if (!canvas) return;
+  if (document.body.classList.contains("webgl")) { canvas.remove(); return; }
   const ctx = canvas.getContext("2d");
   let w, h, dpr;
   const N = innerWidth < 700 ? 70 : 140;
