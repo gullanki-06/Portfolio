@@ -180,3 +180,6 @@ h1 {
   .section { padding: 64px 0; }
   .contact-links .btn { width: 100%; text-align: center; word-break: break-all; }
 }
+
+.project .kicker { display: flex; justify-content: space-between; gap: 8px; }
+.status { color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 0 6px; font-size: .68rem; white-space: nowrap; }

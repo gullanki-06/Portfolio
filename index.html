@@ -35,7 +35,7 @@
           <p class="tag">// machine learning · research &amp; development</p>
           <h1>Gullanki<br><span class="accent">Bhagya Lakshmi</span></h1>
           <p class="role">AI &amp; Data Science Undergraduate · ML Researcher</p>
-          <p class="lead">I build and train machine learning models that tackle real problems, from predicting protein structure to detecting theft on camera and coordinating swarms for search and rescue.</p>
+          <p class="lead">I build and train machine learning models that tackle real problems, from search-and-rescue robots that can spot a buried survivor to emergency networks that know which packet matters most.</p>
           <div class="hero-cta">
             <a href="#projects" class="btn">View projects</a>
             <a href="https://github.com/gullanki-06" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
@@ -53,7 +53,7 @@
       <div class="container narrow reveal">
         <h2 class="section-title"><span class="num">01</span>About</h2>
         <p>I'm a B.Tech student in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Coimbatore. My interest lies in research and development: taking an open question, framing it as a learning problem, and building a model that answers it.</p>
-        <p>My work so far spans computational biology, computer vision and swarm intelligence. Alongside ML, I have a solid grounding in computer networking and cyber security, which shapes how I think about building systems that are reliable and safe.</p>
+        <p>Much of my work is aimed at disaster response: vision models that find survivors, swarm algorithms that plan rescue paths, and learning-based schedulers that keep emergency radio traffic flowing. I also work in NLP and computational biology, and my grounding in networking and cyber security shapes how I build systems that are reliable and safe.</p>
         <ul class="facts">
           <li><strong>Based in</strong>Coimbatore, India</li>
           <li><strong>Focus</strong>ML Research &amp; Development</li>
@@ -68,16 +68,20 @@
         <h2 class="section-title"><span class="num">02</span>Skills</h2>
         <div class="skill-groups">
           <div class="card">
-            <h3>Machine Learning</h3>
-            <ul class="chips"><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>YOLO</li><li>Swarm Intelligence</li></ul>
+            <h3>Machine Learning &amp; AI</h3>
+            <ul class="chips"><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>YOLO</li><li>NLP</li><li>Continual Learning</li></ul>
+          </div>
+          <div class="card">
+            <h3>Optimisation &amp; Robotics</h3>
+            <ul class="chips"><li>Swarm Intelligence</li><li>Particle Swarm Optimisation</li><li>Path Planning</li><li>Raspberry Pi</li></ul>
           </div>
           <div class="card">
             <h3>Programming &amp; Data</h3>
-            <ul class="chips"><li>Python</li><li>Data Analysis</li><li>Model Training &amp; Evaluation</li></ul>
+            <ul class="chips"><li>Python</li><li>Data Analysis</li><li>Model Training &amp; Evaluation</li><li>Streamlit</li></ul>
           </div>
           <div class="card">
             <h3>Networks &amp; Security</h3>
-            <ul class="chips"><li>Computer Networking</li><li>Cyber Security</li></ul>
+            <ul class="chips"><li>Computer Networking</li><li>Cyber Security</li><li>GNU Radio / SDR</li></ul>
           </div>
         </div>
       </div>
@@ -89,24 +93,45 @@
         <h2 class="section-title"><span class="num">03</span>Projects</h2>
         <div class="project-grid">
           <article class="card project">
+            <p class="kicker">Robotics · Computer Vision<span class="status">In progress</span></p>
+            <h3>SwarmSight: Vision-Based Search &amp; Rescue Robot</h3>
+            <p>A rocker-bogie rover that searches disaster zones for survivors. A fine-tuned YOLO11n model detects people and individual body parts, so someone partly buried under rubble can still be found from a visible hand or leg. Runs on a Raspberry Pi 5 CPU via NCNN, avoids obstacles with ToF sensors and maps where people were detected.</p>
+            <ul class="chips small"><li>YOLO11n</li><li>Raspberry Pi 5</li><li>NCNN</li><li>Python</li></ul>
+            <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
+          </article>
+          <article class="card project">
+            <p class="kicker">Swarm Intelligence · Optimisation<span class="status">In progress</span></p>
+            <h3>Adaptive PSO for Multi-Robot Search &amp; Rescue</h3>
+            <p>Path planning for a team of rescue robots framed as an optimisation problem that minimises rescue time and obstacle penalties. Built a 2D multi-robot environment with swarm exploration, victim detection and a Standard PSO baseline, then extended it with adaptive inertia and learning factors to avoid stagnation.</p>
+            <ul class="chips small"><li>Particle Swarm Optimisation</li><li>Multi-Agent Systems</li><li>Python</li></ul>
+            <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
+          </article>
+          <article class="card project">
+            <p class="kicker">Networks · Continual Learning<span class="status">In progress</span></p>
+            <h3>Mission-Aware Continual Learning for SDR Emergency Networks</h3>
+            <p>An AI packet scheduler for GNU Radio that ranks emergency traffic by a Dynamic Mission Criticality Score instead of fixed QoS classes, so an SOS is never stuck behind telemetry. Uses gradient boosting and online learning that adapts in the field, plus a trust layer that stops spoofed nodes from faking priority.</p>
+            <ul class="chips small"><li>GNU Radio</li><li>SDR</li><li>Online Learning</li><li>Gradient Boosting</li></ul>
+            <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
+          </article>
+          <article class="card project">
+            <p class="kicker">NLP · Decision Support</p>
+            <h3>AI Complaint Intelligence</h3>
+            <p>Classifies customer complaints, detects sentiment and assigns a 1 to 5 urgency score, then recommends an action such as immediate escalation. Built on a real consumer complaint dataset with TF-IDF features and an SVM classifier, served through an interactive Streamlit app.</p>
+            <ul class="chips small"><li>NLP</li><li>TF-IDF</li><li>SVM</li><li>Streamlit</li></ul>
+            <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
+          </article>
+          <article class="card project">
             <p class="kicker">Computational Biology</p>
             <h3>Protein Secondary Structure Prediction</h3>
-            <p>Trained a machine learning model to predict the secondary structure of proteins (helix, sheet and coil) directly from their amino acid sequences.</p>
+            <p>Trained a machine learning model to predict protein secondary structure (helix, sheet and coil) from amino acid sequences, and wrapped it in a full-stack web app with a separate frontend and prediction backend.</p>
             <ul class="chips small"><li>Python</li><li>Machine Learning</li><li>Bioinformatics</li></ul>
             <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
           </article>
           <article class="card project">
             <p class="kicker">Computer Vision</p>
             <h3>YOLO-based Theft Detection</h3>
-            <p>Built an object detection model on YOLO that flags suspicious activity and theft in surveillance video, aimed at faster response from security teams.</p>
+            <p>An object detection model built on YOLO that flags suspicious activity and theft in surveillance video, aimed at faster response from security teams.</p>
             <ul class="chips small"><li>YOLO</li><li>Deep Learning</li><li>Python</li></ul>
-            <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
-          </article>
-          <article class="card project">
-            <p class="kicker">Swarm Intelligence</p>
-            <h3>Swarm Intelligence for Search &amp; Rescue</h3>
-            <p>Applied swarm intelligence to coordinate multiple autonomous agents so they can cover a disaster area and locate survivors efficiently.</p>
-            <ul class="chips small"><li>Swarm Intelligence</li><li>Optimisation</li><li>Python</li></ul>
             <div class="links"><a href="https://github.com/gullanki-06" target="_blank" rel="noopener">Code →</a></div>
           </article>
         </div>
