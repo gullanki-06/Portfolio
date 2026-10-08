@@ -10,11 +10,11 @@ AI & Data Science undergraduate at Amrita Vishwa Vidyapeetham, Coimbatore (CGPA 
 
 ## What's inside
 
-An interactive 3D portfolio. Scrolling flies a camera through a 3D world with a stop for each section.
+A light "mission control" design: blueprint grid, cobalt and signal orange, mono labels and HUD readouts.
 
-- **SwarmSight rover**: a 3D model of her search-and-rescue robot. Drag to spin it, and tap the glowing points to open the related project.
-- **Fly-through stations**: a framed portrait, a skills cluster, a protein double helix, a graduation cap and a signal tower.
-- **Details**: light and dark themes, 3D tilt cards, project filters, a custom cursor and a mobile layout. If WebGL is unavailable, the page falls back to a simpler version.
+- **Drone swarm hero**: a live flocking simulation of quad-drone agents that launch, assemble into her name, veer around the cursor (or your finger), scatter on click and re-form. Pauses offscreen and shows a static formation for reduced motion.
+- **Missions**: projects as mission logs with status chips and a schematic of the SwarmSight rover; skills as a systems panel; education as flight telemetry; contact as open comms.
+- **Details**: scroll reveals, live counters, mission filters, keyboard focus states and a phone layout.
 
 ## Projects featured
 
@@ -29,7 +29,7 @@ An interactive 3D portfolio. Scrolling flies a camera through a 3D world with a 
 
 ## Built with
 
-Plain HTML, CSS and JavaScript, with [Three.js](https://threejs.org/) for the 3D scene. There is no build step. It is hosted on Vercel, which redeploys on every push to `main`.
+Plain HTML, CSS and JavaScript (Canvas 2D for the swarm). There are no dependencies and no build step. It is hosted on Vercel, which redeploys on every push to `main`.
 
 ## Run locally
 
@@ -45,7 +45,7 @@ python3 -m http.server 5173
 ```
 index.html   page content
 styles.css   theme, layout and animations
-script.js    interactions (cursor, tilt, filters, counters, theme toggle)
-scene.js     3D world, rover and camera fly-through
+script.js    interactions (nav, reveals, counters, filters, systems scopes)
+swarm.js     drone swarm simulation in the hero
 assets/      photo and preview image
 ```

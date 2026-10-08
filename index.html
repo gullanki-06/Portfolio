@@ -1,277 +1,328 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gullanki Bhagya Lakshmi | ML Research & Development</title>
   <meta name="description" content="Gullanki Bhagya Lakshmi, AI & Data Science student at Amrita Vishwa Vidyapeetham, Coimbatore, building machine learning systems for disaster response.">
+  <meta name="theme-color" content="#f3f2ec">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='3' width='26' height='26' fill='%23f3f2ec' stroke='%231f4fd8' stroke-width='3'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23ff5a1f'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <!-- Preloader -->
-  <div class="loader" aria-hidden="true">
-    <div class="loader-name"><span>Bhagya</span> <em>Lakshmi</em></div>
-    <div class="loader-bar"><i></i></div>
-  </div>
-
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-  <div class="progress" aria-hidden="true"></div>
-  <canvas id="scene" aria-hidden="true"></canvas>
-  <div class="hotspots" aria-label="Rover parts">
-    <button class="hotspot" data-part="vision"><i></i><span>Vision</span></button>
-    <button class="hotspot" data-part="drive"><i></i><span>Navigation</span></button>
-    <button class="hotspot" data-part="comms"><i></i><span>Comms</span></button>
-  </div>
-  <div class="part-pop" role="dialog" aria-live="polite" hidden>
-    <button class="pop-close" aria-label="Close">×</button>
-    <p class="kicker pop-kicker"></p>
-    <h3 class="pop-title"></h3>
-    <p class="pop-text"></p>
-    <a class="more pop-link" href="#projects">See the project <span>→</span></a>
-  </div>
-  <div class="hud" aria-hidden="true">
-    <span class="hud-dot"></span>
-    <span class="hud-label">Station</span>
-    <span class="hud-text">SwarmSight rover</span>
-    <span class="hud-hint">· scroll to fly</span>
-  </div>
+  <a class="skip" href="#brief">Skip to content</a>
+  <div class="progress" aria-hidden="true"><i></i></div>
 
   <header class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand">G<em>B</em>L</a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Work</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand" aria-label="Gullanki Bhagya Lakshmi, back to top">
+        <span class="brand-mark" aria-hidden="true"></span>GBL<span class="brand-sub">/ mission control</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections">
+        <a href="#brief"><b>01</b>Brief</a>
+        <a href="#systems"><b>02</b>Systems</a>
+        <a href="#missions"><b>03</b>Missions</a>
+        <a href="#telemetry"><b>04</b>Telemetry</a>
+        <a href="#comms"><b>05</b>Comms</a>
       </nav>
-      <div class="nav-actions">
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-          <svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-          <svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        </button>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+      <div class="nav-meta">
+        <span class="clock mono" aria-hidden="true"><span id="utc">--:--:--</span> UTC</span>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-name">
       <canvas id="swarm" aria-hidden="true"></canvas>
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="eyebrow fade-up" style="--d:.1s"><span class="pulse"></span>Open to research internships</p>
-          <h1 class="hero-title">
-            <span class="line"><span class="word">Gullanki</span></span>
-            <span class="line"><em class="word">Bhagya Lakshmi</em></span>
-          </h1>
-          <p class="role fade-up" style="--d:.6s">I build <span class="rotator" data-words='["vision models that find survivors","swarms that plan rescue paths","networks that know what matters","models that read protein sequences"]'>vision models that find survivors</span><span class="caret"></span></p>
-          <p class="lead fade-up" style="--d:.75s">AI &amp; Data Science undergraduate at Amrita Vishwa Vidyapeetham, Coimbatore, doing research and development in machine learning for disaster response.</p>
-          <div class="hero-cta fade-up" style="--d:.9s">
-            <a href="#projects" class="btn magnetic"><span>Explore my work</span></a>
-            <a href="https://github.com/gullanki-06" class="btn btn-ghost magnetic" target="_blank" rel="noopener"><span>GitHub ↗</span></a>
-            <a href="https://www.linkedin.com/in/gullankibhagyalakshmi/" class="btn btn-ghost magnetic" target="_blank" rel="noopener"><span>LinkedIn ↗</span></a>
-          </div>
+      <div class="frame-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="wrap hero-inner">
+        <div class="hero-top mono">
+          <span class="chip chip-live"><span class="dot"></span>Open to research internships</span>
+          <span class="coords" aria-hidden="true">BASE · COIMBATORE · 11.0168° N 76.9558° E</span>
         </div>
 
-        <div class="hero-visual fade-up" style="--d:.4s">
-          <div class="rover-stage" aria-label="3D model of the SwarmSight rescue rover">
-            <p class="stage-hint"><span class="pulse"></span>Drag to spin the rover · tap a glowing point</p>
-          </div>
-          <div class="portrait" id="portrait">
-            <div class="portrait-inner">
-              <div class="layer frame"></div>
-              <div class="layer photo"><img src="assets/photo.jpg" alt="Gullanki Bhagya Lakshmi"></div>
-              <div class="layer glare"></div>
-              <div class="layer badge b1"><span class="mono">01</span>YOLO11n</div>
-              <div class="layer badge b2"><span class="mono">02</span>Swarm PSO</div>
-              <div class="layer badge b3"><span class="mono">03</span>SDR · GNU Radio</div>
-              <div class="layer stat"><strong>8.18</strong><span>CGPA</span></div>
-            </div>
-            <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
-              <defs><path id="circ" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
-              <text><textPath href="#circ">MACHINE LEARNING · RESEARCH · DEVELOPMENT · DISASTER RESPONSE · </textPath></text>
-            </svg>
+        <div class="hero-mid">
+          <h1 class="hero-name" id="hero-name">
+            <span class="hero-kicker mono">Gullanki</span>
+            <span class="hero-main" id="swarm-text"><span>Bhagya</span> <span>Lakshmi</span></span>
+          </h1>
+          <dl class="hud mono" aria-hidden="true">
+            <div class="hud-title"><dt>Swarm telemetry</dt><dd><span class="rec"></span>Live</dd></div>
+            <div><dt>Agents</dt><dd id="hud-agents">0000</dd></div>
+            <div><dt>Mode</dt><dd id="hud-mode">Standby</dd></div>
+            <div><dt>Lock</dt><dd id="hud-lock">000%</dd></div>
+            <div><dt>FPS</dt><dd id="hud-fps">--</dd></div>
+            <div class="hud-cursor"><dt>Cursor</dt><dd id="hud-cursor">----, ----</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-copy">
+          <p class="role mono">&gt; I build <span class="rotator" data-words='["vision models that find survivors","swarms that plan rescue paths","networks that know what matters","models that read protein sequences"]'>vision models that find survivors</span><span class="caret" aria-hidden="true"></span></p>
+          <p class="lead">AI &amp; Data Science undergraduate at Amrita Vishwa Vidyapeetham, Coimbatore, doing research and development in machine learning for disaster response.</p>
+          <div class="cta">
+            <a href="#missions" class="btn btn-primary">View mission logs <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/gullanki-06" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/gullankibhagyalakshmi/" class="btn" target="_blank" rel="noopener">LinkedIn ↗</a>
           </div>
         </div>
+        <p class="hero-hint mono" aria-hidden="true"><span class="hint-mouse"><span class="key">cursor</span> disperse · <span class="key">click</span> scatter</span><span class="hint-touch"><span class="key">drag</span> disperse · <span class="key">tap</span> scatter</span> · formation re-forms</p>
       </div>
-      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span></span></a>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Machine Learning</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Swarm Intelligence</span><i>✦</i><span>Continual Learning</span><i>✦</i><span>NLP</span><i>✦</i><span>Cyber Security</span><i>✦</i><span>Networking</span><i>✦</i><span>Python</span><i>✦</i>
-        <span>Machine Learning</span><i>✦</i><span>Computer Vision</span><i>✦</i><span>Swarm Intelligence</span><i>✦</i><span>Continual Learning</span><i>✦</i><span>NLP</span><i>✦</i><span>Cyber Security</span><i>✦</i><span>Networking</span><i>✦</i><span>Python</span><i>✦</i>
+    <!-- TICKER -->
+    <div class="ticker mono" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Machine Learning</span><i>+</i><span>Computer Vision</span><i>+</i><span>Swarm Intelligence</span><i>+</i><span>Continual Learning</span><i>+</i><span>NLP</span><i>+</i><span>Cyber Security</span><i>+</i><span>Networking</span><i>+</i><span>Python</span><i>+</i>
+        <span>Machine Learning</span><i>+</i><span>Computer Vision</span><i>+</i><span>Swarm Intelligence</span><i>+</i><span>Continual Learning</span><i>+</i><span>NLP</span><i>+</i><span>Cyber Security</span><i>+</i><span>Networking</span><i>+</i><span>Python</span><i>+</i>
       </div>
     </div>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container about-grid">
-        <div class="reveal">
-          <p class="label">01 — About</p>
-          <h2 class="section-title">Turning open questions into <em>models that answer them.</em></h2>
-        </div>
-        <div class="reveal about-copy">
-          <p>I'm a B.Tech student in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Coimbatore. I'm drawn to research and development: taking an open question, framing it as a learning problem, and building a model that answers it.</p>
-          <p>Much of my work is aimed at disaster response: vision models that find survivors, swarm algorithms that plan rescue paths, and learning-based schedulers that keep emergency radio traffic flowing. I also work in NLP and computational biology, and my grounding in networking and cyber security shapes how I build systems that are reliable and safe.</p>
-          <div class="stats">
-            <div class="stat-card tilt"><strong class="count" data-to="8.18" data-dec="2">0</strong><span>CGPA</span></div>
-            <div class="stat-card tilt"><strong class="count" data-to="6">0</strong><span>ML projects</span></div>
-            <div class="stat-card tilt"><strong class="count" data-to="3">0</strong><span>Research tracks</span></div>
+    <!-- 01 BRIEF -->
+    <section id="brief" class="section">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label mono"><b>01</b> Mission brief</p>
+          <h2>Turning open questions into <span class="hl">models that answer them.</span></h2>
+        </header>
+        <div class="brief-grid">
+          <div class="brief-copy reveal">
+            <p>I'm a B.Tech student in Artificial Intelligence and Data Science at Amrita Vishwa Vidyapeetham, Coimbatore. I'm drawn to research and development: taking an open question, framing it as a learning problem, and building a model that answers it.</p>
+            <p>Much of my work is aimed at disaster response: vision models that find survivors, swarm algorithms that plan rescue paths, and learning-based schedulers that keep emergency radio traffic flowing. I also work in NLP and computational biology, and my grounding in networking and cyber security shapes how I build systems that are reliable and safe.</p>
+            <div class="readouts">
+              <div class="readout"><span class="mono">CGPA</span><strong class="count" data-to="8.18" data-dec="2">0.00</strong><small class="mono">/ 10</small></div>
+              <div class="readout"><span class="mono">ML projects</span><strong class="count" data-to="6">0</strong><small class="mono">logged</small></div>
+              <div class="readout"><span class="mono">Research tracks</span><strong class="count" data-to="3">0</strong><small class="mono">active</small></div>
+            </div>
           </div>
+
+          <aside class="id-card bracket reveal" aria-label="Operator profile">
+            <div class="id-head mono"><span>Operator ID</span><span>GBL-01</span></div>
+            <div class="id-photo">
+              <img src="assets/photo.jpg" alt="Portrait of Gullanki Bhagya Lakshmi" width="960" height="1280" loading="lazy">
+              <span class="reticle" aria-hidden="true"></span>
+            </div>
+            <dl class="id-fields">
+              <div><dt class="mono">Name</dt><dd>Gullanki Bhagya Lakshmi</dd></div>
+              <div><dt class="mono">Program</dt><dd>B.Tech, AI &amp; Data Science</dd></div>
+              <div><dt class="mono">Base</dt><dd>Amrita Vishwa Vidyapeetham, Coimbatore</dd></div>
+              <div><dt class="mono">Focus</dt><dd>ML for disaster response</dd></div>
+              <div><dt class="mono">Status</dt><dd><span class="chip chip-live"><span class="dot"></span>Open to internships</span></dd></div>
+            </dl>
+          </aside>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section alt">
-      <div class="container">
-        <div class="reveal">
-          <p class="label">02 — Skills</p>
-          <h2 class="section-title">A toolkit built around <em>learning systems.</em></h2>
-        </div>
-        <div class="skill-groups">
-          <div class="card tilt reveal">
-            <div class="icon">◎</div>
+    <!-- 02 SYSTEMS -->
+    <section id="systems" class="section section-alt">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label mono"><b>02</b> Systems panel</p>
+          <h2>A toolkit built around <span class="hl">learning systems.</span></h2>
+        </header>
+        <div class="systems">
+          <article class="sys reveal">
+            <header class="sys-head mono"><span>SYS-01</span><span class="ok"><i></i>Online</span></header>
             <h3>Machine Learning &amp; AI</h3>
-            <ul class="chips"><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>YOLO</li><li>NLP</li><li>Continual Learning</li></ul>
-          </div>
-          <div class="card tilt reveal">
-            <div class="icon">⬡</div>
+            <ul class="tags"><li>Machine Learning</li><li>Deep Learning</li><li>Computer Vision</li><li>YOLO</li><li>NLP</li><li>Continual Learning</li></ul>
+            <div class="sys-scope" aria-hidden="true"><canvas class="scope" data-seed="1"></canvas></div>
+          </article>
+          <article class="sys reveal">
+            <header class="sys-head mono"><span>SYS-02</span><span class="ok"><i></i>Online</span></header>
             <h3>Optimisation &amp; Robotics</h3>
-            <ul class="chips"><li>Swarm Intelligence</li><li>Particle Swarm Optimisation</li><li>Path Planning</li><li>Raspberry Pi</li></ul>
-          </div>
-          <div class="card tilt reveal">
-            <div class="icon">{ }</div>
+            <ul class="tags"><li>Swarm Intelligence</li><li>Particle Swarm Optimisation</li><li>Path Planning</li><li>Raspberry Pi</li></ul>
+            <div class="sys-scope" aria-hidden="true"><canvas class="scope" data-seed="2"></canvas></div>
+          </article>
+          <article class="sys reveal">
+            <header class="sys-head mono"><span>SYS-03</span><span class="ok"><i></i>Online</span></header>
             <h3>Programming &amp; Data</h3>
-            <ul class="chips"><li>Python</li><li>Data Analysis</li><li>Model Training &amp; Evaluation</li><li>Streamlit</li></ul>
-          </div>
-          <div class="card tilt reveal">
-            <div class="icon">⌁</div>
+            <ul class="tags"><li>Python</li><li>Data Analysis</li><li>Model Training &amp; Evaluation</li><li>Streamlit</li></ul>
+            <div class="sys-scope" aria-hidden="true"><canvas class="scope" data-seed="3"></canvas></div>
+          </article>
+          <article class="sys reveal">
+            <header class="sys-head mono"><span>SYS-04</span><span class="ok"><i></i>Online</span></header>
             <h3>Networks &amp; Security</h3>
-            <ul class="chips"><li>Computer Networking</li><li>Cyber Security</li><li>GNU Radio / SDR</li></ul>
-          </div>
+            <ul class="tags"><li>Computer Networking</li><li>Cyber Security</li><li>GNU Radio / SDR</li></ul>
+            <div class="sys-scope" aria-hidden="true"><canvas class="scope" data-seed="4"></canvas></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="reveal section-head">
+    <!-- 03 MISSIONS -->
+    <section id="missions" class="section">
+      <div class="wrap">
+        <header class="sec-head sec-head-row reveal">
           <div>
-            <p class="label">03 — Selected work</p>
-            <h2 class="section-title">Projects with <em>real stakes.</em></h2>
+            <p class="sec-label mono"><b>03</b> Mission logs</p>
+            <h2>Projects with <span class="hl">real stakes.</span></h2>
           </div>
-          <div class="filters" role="tablist">
-            <button class="active" data-filter="all">All</button>
-            <button data-filter="rescue">Disaster response</button>
-            <button data-filter="ml">Applied ML</button>
+          <div class="filters mono" role="group" aria-label="Filter missions">
+            <button aria-pressed="true" data-filter="all">All <span>06</span></button>
+            <button aria-pressed="false" data-filter="rescue">Disaster response <span>03</span></button>
+            <button aria-pressed="false" data-filter="ml">Applied ML <span>03</span></button>
           </div>
-        </div>
-        <div class="project-grid">
-          <article id="p-swarmsight" class="card project tilt reveal featured" data-tags="rescue">
-            <span class="big-num">01</span>
-            <p class="kicker">Robotics · Computer Vision <span class="status">In progress</span></p>
-            <h3>SwarmSight: Vision-Based Search &amp; Rescue Robot</h3>
-            <p>A rocker-bogie rover that searches disaster zones for survivors. A fine-tuned YOLO11n model detects people and individual body parts, so someone partly buried under rubble can still be found from a visible hand or leg. Runs on a Raspberry Pi 5 CPU via NCNN, avoids obstacles with ToF sensors and maps where people were detected.</p>
-            <ul class="chips small"><li>YOLO11n</li><li>Raspberry Pi 5</li><li>NCNN</li><li>Python</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+        </header>
+
+        <div class="missions">
+          <article class="mission mission-featured bracket reveal" data-tags="rescue">
+            <div class="mission-body">
+              <header class="mission-head mono">
+                <span class="msn">MSN-01</span>
+                <span class="chip chip-active"><span class="dot"></span>Ongoing · Phase 1 complete</span>
+              </header>
+              <p class="mission-domain mono">Robotics · Computer Vision</p>
+              <h3>SwarmSight: Vision-Based Search &amp; Rescue Robot</h3>
+              <p>A rocker-bogie rover that searches disaster zones for survivors. A fine-tuned YOLO11n model detects people and individual body parts, so someone partly buried under rubble can still be found from a visible hand or leg. Runs on a Raspberry Pi 5 CPU via NCNN, avoids obstacles with ToF sensors and maps where people were detected.</p>
+              <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>YOLO11n</li><li>Raspberry Pi 5</li><li>NCNN</li><li>Python</li></ul></dd></dl>
+              <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
+            </div>
+            <figure class="schematic" aria-label="Schematic of the SwarmSight rover">
+              <svg viewBox="0 0 420 300" role="img" aria-labelledby="rover-t">
+                <title id="rover-t">Line drawing of a rocker-bogie rover with labelled vision, compute and sensor modules</title>
+                <g class="sch-grid"><path d="M0 50H420M0 100H420M0 150H420M0 200H420M0 250H420M70 0V300M140 0V300M210 0V300M280 0V300M350 0V300"/></g>
+                <g class="sch-line">
+                  <rect x="120" y="128" width="170" height="52" rx="4"/>
+                  <rect x="250" y="96" width="30" height="32" rx="3"/>
+                  <circle cx="265" cy="112" r="8"/>
+                  <path d="M150 128v-40h-14"/><circle cx="130" cy="86" r="6"/>
+                  <path d="M135 180 L100 222 M135 180 L190 222 M190 222 L160 222 M190 222 L220 222"/>
+                  <path d="M275 180 L310 222"/>
+                  <circle cx="100" cy="236" r="18"/><circle cx="160" cy="236" r="18"/><circle cx="220" cy="236" r="18"/><circle cx="310" cy="236" r="18"/>
+                  <circle cx="100" cy="236" r="4"/><circle cx="160" cy="236" r="4"/><circle cx="220" cy="236" r="4"/><circle cx="310" cy="236" r="4"/>
+                  <path class="sch-ground" d="M40 254H380"/>
+                </g>
+                <g class="sch-beam"><path d="M273 112 L400 70 L400 154 Z"/></g>
+                <g class="sch-call">
+                  <path d="M265 104 L300 40 H400"/><circle cx="265" cy="104" r="2.5"/>
+                  <path d="M180 140 L150 40 H40"/><circle cx="180" cy="140" r="2.5"/>
+                  <path d="M290 165 L360 190 H400"/><circle cx="290" cy="165" r="2.5"/>
+                </g>
+                <g class="sch-text">
+                  <text x="306" y="34">VISION · YOLO11n</text>
+                  <text x="40" y="34">COMPUTE · Pi 5 / NCNN</text>
+                  <text x="368" y="184">ToF</text>
+                </g>
+              </svg>
+              <figcaption class="mono">FIG. 01 — rocker-bogie rover, side elevation</figcaption>
+            </figure>
           </article>
-          <article id="p-pso" class="card project tilt reveal" data-tags="rescue">
-            <span class="big-num">02</span>
-            <p class="kicker">Swarm Intelligence <span class="status">In progress</span></p>
+
+          <article class="mission bracket reveal" data-tags="rescue">
+            <header class="mission-head mono"><span class="msn">MSN-02</span><span class="chip chip-active"><span class="dot"></span>In progress</span></header>
+            <p class="mission-domain mono">Swarm Intelligence</p>
             <h3>Adaptive PSO for Multi-Robot Search &amp; Rescue</h3>
             <p>Path planning for a team of rescue robots, framed as an optimisation problem that minimises rescue time and obstacle penalties. A Standard PSO baseline extended with adaptive inertia and learning factors to avoid stagnation.</p>
-            <ul class="chips small"><li>PSO</li><li>Multi-Agent Systems</li><li>Python</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+            <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>PSO</li><li>Multi-Agent Systems</li><li>Python</li></ul></dd></dl>
+            <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
           </article>
-          <article id="p-sdr" class="card project tilt reveal" data-tags="rescue">
-            <span class="big-num">03</span>
-            <p class="kicker">Networks · Continual Learning <span class="status">In progress</span></p>
+
+          <article class="mission bracket reveal" data-tags="rescue">
+            <header class="mission-head mono"><span class="msn">MSN-03</span><span class="chip chip-active"><span class="dot"></span>In progress</span></header>
+            <p class="mission-domain mono">Networks · Continual Learning</p>
             <h3>Mission-Aware Continual Learning for SDR Emergency Networks</h3>
             <p>An AI packet scheduler for GNU Radio that ranks emergency traffic by a Dynamic Mission Criticality Score, so an SOS is never stuck behind telemetry. Learns online in the field, with a trust layer that stops spoofed nodes from faking priority.</p>
-            <ul class="chips small"><li>GNU Radio</li><li>SDR</li><li>Online Learning</li><li>Gradient Boosting</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+            <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>GNU Radio</li><li>SDR</li><li>Online Learning</li><li>Gradient Boosting</li></ul></dd></dl>
+            <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
           </article>
-          <article class="card project tilt reveal" data-tags="ml">
-            <span class="big-num">04</span>
-            <p class="kicker">NLP · Decision Support</p>
+
+          <article class="mission bracket reveal" data-tags="ml">
+            <header class="mission-head mono"><span class="msn">MSN-04</span><span class="chip chip-done">Complete</span></header>
+            <p class="mission-domain mono">NLP · Decision Support</p>
             <h3>AI Complaint Intelligence</h3>
             <p>Classifies customer complaints, detects sentiment and assigns a 1 to 5 urgency score, then recommends an action such as immediate escalation. TF-IDF features and an SVM classifier, served through a Streamlit app.</p>
-            <ul class="chips small"><li>NLP</li><li>TF-IDF</li><li>SVM</li><li>Streamlit</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+            <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>NLP</li><li>TF-IDF</li><li>SVM</li><li>Streamlit</li></ul></dd></dl>
+            <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
           </article>
-          <article class="card project tilt reveal" data-tags="ml">
-            <span class="big-num">05</span>
-            <p class="kicker">Computational Biology</p>
+
+          <article class="mission bracket reveal" data-tags="ml">
+            <header class="mission-head mono"><span class="msn">MSN-05</span><span class="chip chip-done">Complete</span></header>
+            <p class="mission-domain mono">Computational Biology</p>
             <h3>Protein Secondary Structure Prediction</h3>
             <p>A machine learning model that predicts protein secondary structure (helix, sheet and coil) from amino acid sequences, wrapped in a full-stack web app with a separate frontend and prediction backend.</p>
-            <ul class="chips small"><li>Python</li><li>Machine Learning</li><li>Bioinformatics</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+            <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>Python</li><li>Machine Learning</li><li>Bioinformatics</li></ul></dd></dl>
+            <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
           </article>
-          <article class="card project tilt reveal" data-tags="ml">
-            <span class="big-num">06</span>
-            <p class="kicker">Computer Vision</p>
+
+          <article class="mission bracket reveal" data-tags="ml">
+            <header class="mission-head mono"><span class="msn">MSN-06</span><span class="chip chip-done">Complete</span></header>
+            <p class="mission-domain mono">Computer Vision</p>
             <h3>YOLO-based Theft Detection</h3>
             <p>An object detection model built on YOLO that flags suspicious activity and theft in surveillance video, aimed at faster response from security teams.</p>
-            <ul class="chips small"><li>YOLO</li><li>Deep Learning</li><li>Python</li></ul>
-            <a class="more" href="https://github.com/gullanki-06" target="_blank" rel="noopener">View code <span>→</span></a>
+            <dl class="payload mono"><dt>Payload</dt><dd><ul class="tags"><li>YOLO</li><li>Deep Learning</li><li>Python</li></ul></dd></dl>
+            <a class="link mono" href="https://github.com/gullanki-06" target="_blank" rel="noopener">Open repository <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section alt">
-      <div class="container narrow">
-        <div class="reveal">
-          <p class="label">04 — Education</p>
-          <h2 class="section-title">Where I'm <em>learning.</em></h2>
-        </div>
-        <div class="edu card tilt reveal">
-          <div>
-            <p class="kicker">Present</p>
-            <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
-            <p class="muted">Amrita Vishwa Vidyapeetham, School of Artificial Intelligence, Coimbatore</p>
+    <!-- 04 TELEMETRY -->
+    <section id="telemetry" class="section section-alt">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="sec-label mono"><b>04</b> Flight telemetry</p>
+          <h2>Where I'm <span class="hl">learning.</span></h2>
+        </header>
+        <div class="telemetry">
+          <ol class="flight reveal">
+            <li class="flight-now">
+              <span class="node" aria-hidden="true"></span>
+              <p class="mono flight-t">T+NOW · In flight</p>
+              <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+              <p class="muted">Amrita Vishwa Vidyapeetham, School of Artificial Intelligence, Coimbatore</p>
+            </li>
+            <li class="flight-next">
+              <span class="node" aria-hidden="true"></span>
+              <p class="mono flight-t">Next waypoint</p>
+              <h3>Research internship in machine learning</h3>
+              <p class="muted">Open to research internships and collaborations.</p>
+            </li>
+          </ol>
+          <div class="gauge bracket reveal" role="img" aria-label="CGPA 8.18 out of 10">
+            <div class="gauge-head mono"><span>CGPA</span><span>/ 10</span></div>
+            <strong class="gauge-val count" data-to="8.18" data-dec="2">0.00</strong>
+            <div class="gauge-bar" aria-hidden="true"><i style="--v:.818"></i></div>
+            <div class="gauge-ticks mono" aria-hidden="true"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span><span>10</span></div>
           </div>
-          <div class="edu-score"><strong>8.18</strong><span>CGPA / 10</span></div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <div class="container narrow reveal">
-        <p class="label">05 — Contact</p>
-        <h2 class="contact-title">Let's build something <em>that matters.</em></h2>
-        <p class="muted">Open to research internships and collaborations in machine learning.</p>
-        <a class="email magnetic" href="mailto:gullankibhagyalakshmi@gmail.com"><span>gullankibhagyalakshmi@gmail.com</span></a>
-        <div class="socials">
-          <a href="https://www.linkedin.com/in/gullankibhagyalakshmi/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="https://github.com/gullanki-06" target="_blank" rel="noopener">GitHub ↗</a>
+    <!-- 05 COMMS -->
+    <section id="comms" class="section comms">
+      <div class="wrap">
+        <div class="comms-panel bracket reveal">
+          <p class="sec-label mono"><b>05</b> Open comms <span class="chip chip-live"><span class="dot"></span>Channel open</span></p>
+          <h2>Let's build something <span class="hl">that matters.</span></h2>
+          <p class="muted">Open to research internships and collaborations in machine learning.</p>
+          <div class="email-row">
+            <a class="email" href="mailto:gullankibhagyalakshmi@gmail.com">gullankibhagyalakshmi@gmail.com</a>
+            <button class="btn copy mono" type="button" data-copy="gullankibhagyalakshmi@gmail.com">Copy</button>
+          </div>
+          <div class="cta">
+            <a class="btn" href="https://www.linkedin.com/in/gullankibhagyalakshmi/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/gullanki-06" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
+  <footer class="footer mono">
+    <div class="wrap footer-inner">
       <span>© <span id="year"></span> Gullanki Bhagya Lakshmi</span>
+      <span class="eot">End of transmission</span>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="scene.js"></script>
+  <script src="swarm.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
